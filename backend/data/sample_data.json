@@ -1,0 +1,508 @@
+{
+  "project": "SmartRoute AI",
+  "version": "0.1.0",
+  "description": "Curated sample incident alerts and emergency news telemetry",
+  "incidents": [
+    {
+      "incident_id": "INC-BLR-001",
+      "headline": "Multi-vehicle collision blocking eastbound lanes on Whitefield Road",
+      "raw_text": "Traffic police report a 2-vehicle accident near Mahadevapura on Whitefield Road / Swamy Vivekananda corridor. One lane blocked, emergency services on scene.",
+      "event_type": "accident",
+      "severity": "high",
+      "location": {
+        "name": "Whitefield Road, Mahadevapura",
+        "lat": 12.993,
+        "lng": 77.7058
+      },
+      "reported_time": "18:42",
+      "impact_radius_km": 1.0
+    },
+    {
+      "incident_id": "INC-BLR-002",
+      "headline": "Road surfacing and shoulder maintenance near West Orbital Ring",
+      "raw_text": "Municipal engineering crews occupying outer lane for asphalt repair between km 6.2 and 7.8 on Outer Ring Road.",
+      "event_type": "construction",
+      "severity": "medium",
+      "location": {
+        "name": "West Orbital Bypass km 7.2",
+        "lat": 12.938,
+        "lng": 77.598
+      },
+      "reported_time": "17:15",
+      "impact_radius_km": 1.0
+    },
+    {
+      "incident_id": "INC-BLR-003",
+      "headline": "Water pipe leak and emergency excavation on MG Road junction",
+      "raw_text": "BWSSB emergency repair crew working on fractured main line. Traffic diverted to single lane.",
+      "event_type": "closure",
+      "severity": "medium",
+      "location": {
+        "name": "MG Road / Central Arterial",
+        "lat": 12.968,
+        "lng": 77.598
+      },
+      "reported_time": "18:10",
+      "impact_radius_km": 0.8
+    },
+    {
+      "incident_id": "INC-BLR-004",
+      "headline": "Localized underpass waterlogging reported near Richmond Circle",
+      "raw_text": "Drainage overflow causing 25cm standing water in underpass. Low-clearance vehicles advised to avoid.",
+      "event_type": "flood",
+      "severity": "high",
+      "location": {
+        "name": "Richmond Circle Underpass",
+        "lat": 12.961,
+        "lng": 77.603
+      },
+      "reported_time": "18:30",
+      "impact_radius_km": 1.0
+    }
+  ],
+  "synthetic_delay_training_dataset": {
+    "_comment": "SYNTHETIC PROTOTYPE TRAINING CORPUS (Generated for Delay Prediction Regressor)",
+    "feature_names": [
+      "observed_speed",
+      "expected_speed",
+      "speed_ratio",
+      "baseline_duration_minutes",
+      "rainfall_mm",
+      "visibility_m",
+      "wind_speed_kmh",
+      "incident_count",
+      "incident_severity",
+      "road_type_code",
+      "hour_of_day",
+      "day_of_week"
+    ],
+    "total_samples": 2000,
+    "sample_records": [
+      {
+        "features": {
+          "observed_speed": 18.700000762939453,
+          "expected_speed": 26.447303771972656,
+          "speed_ratio": 0.7058151960372925,
+          "baseline_duration_minutes": 18.285457611083984,
+          "rainfall_mm": 45.0,
+          "visibility_m": 3295.366455078125,
+          "wind_speed_kmh": 40.400001525878906,
+          "incident_count": 1.0,
+          "incident_severity": 0.4000000059604645,
+          "road_type_code": 2.0,
+          "hour_of_day": 23.0,
+          "day_of_week": 2.0
+        },
+        "target_delay_minutes": 18.600000381469727
+      },
+      {
+        "features": {
+          "observed_speed": 22.0,
+          "expected_speed": 25.344966888427734,
+          "speed_ratio": 0.8679766058921814,
+          "baseline_duration_minutes": 35.29514694213867,
+          "rainfall_mm": 36.20000076293945,
+          "visibility_m": 4879.4306640625,
+          "wind_speed_kmh": 5.400000095367432,
+          "incident_count": 0.0,
+          "incident_severity": 0.0,
+          "road_type_code": 2.0,
+          "hour_of_day": 6.0,
+          "day_of_week": 5.0
+        },
+        "target_delay_minutes": 11.899999618530273
+      },
+      {
+        "features": {
+          "observed_speed": 30.299999237060547,
+          "expected_speed": 44.16807174682617,
+          "speed_ratio": 0.6870983242988586,
+          "baseline_duration_minutes": 22.13697052001953,
+          "rainfall_mm": 51.20000076293945,
+          "visibility_m": 2423.72607421875,
+          "wind_speed_kmh": 53.400001525878906,
+          "incident_count": 0.0,
+          "incident_severity": 0.0,
+          "road_type_code": 1.0,
+          "hour_of_day": 6.0,
+          "day_of_week": 6.0
+        },
+        "target_delay_minutes": 15.5
+      },
+      {
+        "features": {
+          "observed_speed": 26.700000762939453,
+          "expected_speed": 41.182003021240234,
+          "speed_ratio": 0.6484532952308655,
+          "baseline_duration_minutes": 34.402870178222656,
+          "rainfall_mm": 0.0,
+          "visibility_m": 9692.2890625,
+          "wind_speed_kmh": 6.400000095367432,
+          "incident_count": 0.0,
+          "incident_severity": 0.0,
+          "road_type_code": 1.0,
+          "hour_of_day": 9.0,
+          "day_of_week": 6.0
+        },
+        "target_delay_minutes": 13.0
+      },
+      {
+        "features": {
+          "observed_speed": 74.19999694824219,
+          "expected_speed": 82.10635375976562,
+          "speed_ratio": 0.9042737483978271,
+          "baseline_duration_minutes": 19.674890518188477,
+          "rainfall_mm": 0.0,
+          "visibility_m": 9870.1806640625,
+          "wind_speed_kmh": 9.199999809265137,
+          "incident_count": 0.0,
+          "incident_severity": 0.0,
+          "road_type_code": 0.0,
+          "hour_of_day": 3.0,
+          "day_of_week": 3.0
+        },
+        "target_delay_minutes": 2.9000000953674316
+      },
+      {
+        "features": {
+          "observed_speed": 9.300000190734863,
+          "expected_speed": 25.928232192993164,
+          "speed_ratio": 0.36016491055488586,
+          "baseline_duration_minutes": 30.433874130249023,
+          "rainfall_mm": 0.0,
+          "visibility_m": 9769.9482421875,
+          "wind_speed_kmh": 23.5,
+          "incident_count": 0.0,
+          "incident_severity": 0.0,
+          "road_type_code": 2.0,
+          "hour_of_day": 20.0,
+          "day_of_week": 1.0
+        },
+        "target_delay_minutes": 21.899999618530273
+      },
+      {
+        "features": {
+          "observed_speed": 51.20000076293945,
+          "expected_speed": 52.64278030395508,
+          "speed_ratio": 0.972018301486969,
+          "baseline_duration_minutes": 42.515708923339844,
+          "rainfall_mm": 0.0,
+          "visibility_m": 9566.1884765625,
+          "wind_speed_kmh": 23.299999237060547,
+          "incident_count": 0.0,
+          "incident_severity": 0.0,
+          "road_type_code": 1.0,
+          "hour_of_day": 1.0,
+          "day_of_week": 1.0
+        },
+        "target_delay_minutes": 2.0
+      },
+      {
+        "features": {
+          "observed_speed": 59.0,
+          "expected_speed": 78.10877227783203,
+          "speed_ratio": 0.7559520602226257,
+          "baseline_duration_minutes": 27.271778106689453,
+          "rainfall_mm": 34.599998474121094,
+          "visibility_m": 4572.74169921875,
+          "wind_speed_kmh": 40.099998474121094,
+          "incident_count": 0.0,
+          "incident_severity": 0.0,
+          "road_type_code": 0.0,
+          "hour_of_day": 12.0,
+          "day_of_week": 5.0
+        },
+        "target_delay_minutes": 11.199999809265137
+      },
+      {
+        "features": {
+          "observed_speed": 80.9000015258789,
+          "expected_speed": 84.94651794433594,
+          "speed_ratio": 0.9523128867149353,
+          "baseline_duration_minutes": 28.727664947509766,
+          "rainfall_mm": 0.0,
+          "visibility_m": 9652.841796875,
+          "wind_speed_kmh": 8.199999809265137,
+          "incident_count": 0.0,
+          "incident_severity": 0.0,
+          "road_type_code": 0.0,
+          "hour_of_day": 4.0,
+          "day_of_week": 4.0
+        },
+        "target_delay_minutes": 1.7000000476837158
+      },
+      {
+        "features": {
+          "observed_speed": 39.79999923706055,
+          "expected_speed": 45.72428894042969,
+          "speed_ratio": 0.871290385723114,
+          "baseline_duration_minutes": 18.55939292907715,
+          "rainfall_mm": 0.0,
+          "visibility_m": 10180.283203125,
+          "wind_speed_kmh": 7.300000190734863,
+          "incident_count": 0.0,
+          "incident_severity": 0.0,
+          "road_type_code": 1.0,
+          "hour_of_day": 14.0,
+          "day_of_week": 4.0
+        },
+        "target_delay_minutes": 3.299999952316284
+      },
+      {
+        "features": {
+          "observed_speed": 7.400000095367432,
+          "expected_speed": 29.42228126525879,
+          "speed_ratio": 0.25146040320396423,
+          "baseline_duration_minutes": 14.64262580871582,
+          "rainfall_mm": 0.0,
+          "visibility_m": 10219.6806640625,
+          "wind_speed_kmh": 24.399999618530273,
+          "incident_count": 0.0,
+          "incident_severity": 0.0,
+          "road_type_code": 2.0,
+          "hour_of_day": 9.0,
+          "day_of_week": 3.0
+        },
+        "target_delay_minutes": 12.899999618530273
+      },
+      {
+        "features": {
+          "observed_speed": 43.20000076293945,
+          "expected_speed": 82.41036987304688,
+          "speed_ratio": 0.5240365862846375,
+          "baseline_duration_minutes": 34.835880279541016,
+          "rainfall_mm": 46.20000076293945,
+          "visibility_m": 3109.379150390625,
+          "wind_speed_kmh": 51.70000076293945,
+          "incident_count": 0.0,
+          "incident_severity": 0.0,
+          "road_type_code": 0.0,
+          "hour_of_day": 9.0,
+          "day_of_week": 6.0
+        },
+        "target_delay_minutes": 20.5
+      },
+      {
+        "features": {
+          "observed_speed": 46.5,
+          "expected_speed": 47.32908630371094,
+          "speed_ratio": 0.9826661944389343,
+          "baseline_duration_minutes": 44.90631866455078,
+          "rainfall_mm": 5.400000095367432,
+          "visibility_m": 9568.009765625,
+          "wind_speed_kmh": 61.79999923706055,
+          "incident_count": 2.0,
+          "incident_severity": 0.4000000059604645,
+          "road_type_code": 1.0,
+          "hour_of_day": 3.0,
+          "day_of_week": 2.0
+        },
+        "target_delay_minutes": 14.300000190734863
+      },
+      {
+        "features": {
+          "observed_speed": 30.399999618530273,
+          "expected_speed": 34.955848693847656,
+          "speed_ratio": 0.8699214458465576,
+          "baseline_duration_minutes": 27.96186065673828,
+          "rainfall_mm": 52.599998474121094,
+          "visibility_m": 2033.137939453125,
+          "wind_speed_kmh": 17.700000762939453,
+          "incident_count": 0.0,
+          "incident_severity": 0.0,
+          "road_type_code": 2.0,
+          "hour_of_day": 4.0,
+          "day_of_week": 5.0
+        },
+        "target_delay_minutes": 13.399999618530273
+      },
+      {
+        "features": {
+          "observed_speed": 65.4000015258789,
+          "expected_speed": 79.25897979736328,
+          "speed_ratio": 0.8252400159835815,
+          "baseline_duration_minutes": 35.29487991333008,
+          "rainfall_mm": 0.0,
+          "visibility_m": 9621.00390625,
+          "wind_speed_kmh": 9.5,
+          "incident_count": 0.0,
+          "incident_severity": 0.0,
+          "road_type_code": 0.0,
+          "hour_of_day": 12.0,
+          "day_of_week": 5.0
+        },
+        "target_delay_minutes": 5.699999809265137
+      },
+      {
+        "features": {
+          "observed_speed": 51.70000076293945,
+          "expected_speed": 76.768798828125,
+          "speed_ratio": 0.6735495328903198,
+          "baseline_duration_minutes": 37.72932052612305,
+          "rainfall_mm": 3.799999952316284,
+          "visibility_m": 9260.4287109375,
+          "wind_speed_kmh": 35.79999923706055,
+          "incident_count": 0.0,
+          "incident_severity": 0.0,
+          "road_type_code": 0.0,
+          "hour_of_day": 0.0,
+          "day_of_week": 0.0
+        },
+        "target_delay_minutes": 10.699999809265137
+      },
+      {
+        "features": {
+          "observed_speed": 16.100000381469727,
+          "expected_speed": 26.720054626464844,
+          "speed_ratio": 0.6030787229537964,
+          "baseline_duration_minutes": 27.852182388305664,
+          "rainfall_mm": 0.0,
+          "visibility_m": 9690.41015625,
+          "wind_speed_kmh": 6.900000095367432,
+          "incident_count": 0.0,
+          "incident_severity": 0.0,
+          "road_type_code": 2.0,
+          "hour_of_day": 18.0,
+          "day_of_week": 4.0
+        },
+        "target_delay_minutes": 12.800000190734863
+      },
+      {
+        "features": {
+          "observed_speed": 48.099998474121094,
+          "expected_speed": 52.957550048828125,
+          "speed_ratio": 0.9084718823432922,
+          "baseline_duration_minutes": 35.44512939453125,
+          "rainfall_mm": 44.20000076293945,
+          "visibility_m": 3670.592529296875,
+          "wind_speed_kmh": 11.600000381469727,
+          "incident_count": 2.0,
+          "incident_severity": 0.4000000059604645,
+          "road_type_code": 1.0,
+          "hour_of_day": 1.0,
+          "day_of_week": 5.0
+        },
+        "target_delay_minutes": 21.600000381469727
+      },
+      {
+        "features": {
+          "observed_speed": 46.599998474121094,
+          "expected_speed": 46.939422607421875,
+          "speed_ratio": 0.9923867583274841,
+          "baseline_duration_minutes": 41.93693542480469,
+          "rainfall_mm": 39.79999923706055,
+          "visibility_m": 4070.587890625,
+          "wind_speed_kmh": 5.900000095367432,
+          "incident_count": 1.0,
+          "incident_severity": 0.4000000059604645,
+          "road_type_code": 1.0,
+          "hour_of_day": 2.0,
+          "day_of_week": 3.0
+        },
+        "target_delay_minutes": 12.300000190734863
+      },
+      {
+        "features": {
+          "observed_speed": 28.100000381469727,
+          "expected_speed": 43.20621109008789,
+          "speed_ratio": 0.6508621573448181,
+          "baseline_duration_minutes": 14.914758682250977,
+          "rainfall_mm": 0.0,
+          "visibility_m": 10426.5185546875,
+          "wind_speed_kmh": 20.700000762939453,
+          "incident_count": 0.0,
+          "incident_severity": 0.0,
+          "road_type_code": 1.0,
+          "hour_of_day": 12.0,
+          "day_of_week": 0.0
+        },
+        "target_delay_minutes": 5.900000095367432
+      },
+      {
+        "features": {
+          "observed_speed": 12.100000381469727,
+          "expected_speed": 37.940494537353516,
+          "speed_ratio": 0.3196585774421692,
+          "baseline_duration_minutes": 38.17314910888672,
+          "rainfall_mm": 58.20000076293945,
+          "visibility_m": 1349.1802978515625,
+          "wind_speed_kmh": 37.5,
+          "incident_count": 0.0,
+          "incident_severity": 0.0,
+          "road_type_code": 2.0,
+          "hour_of_day": 17.0,
+          "day_of_week": 5.0
+        },
+        "target_delay_minutes": 38.29999923706055
+      },
+      {
+        "features": {
+          "observed_speed": 26.600000381469727,
+          "expected_speed": 31.19824981689453,
+          "speed_ratio": 0.8531314134597778,
+          "baseline_duration_minutes": 10.38894271850586,
+          "rainfall_mm": 0.0,
+          "visibility_m": 9568.521484375,
+          "wind_speed_kmh": 6.400000095367432,
+          "incident_count": 0.0,
+          "incident_severity": 0.0,
+          "road_type_code": 2.0,
+          "hour_of_day": 16.0,
+          "day_of_week": 1.0
+        },
+        "target_delay_minutes": 1.7999999523162842
+      },
+      {
+        "features": {
+          "observed_speed": 12.399999618530273,
+          "expected_speed": 28.2007999420166,
+          "speed_ratio": 0.4386512041091919,
+          "baseline_duration_minutes": 34.01402282714844,
+          "rainfall_mm": 0.0,
+          "visibility_m": 10022.783203125,
+          "wind_speed_kmh": 23.700000762939453,
+          "incident_count": 2.0,
+          "incident_severity": 0.4000000059604645,
+          "road_type_code": 2.0,
+          "hour_of_day": 19.0,
+          "day_of_week": 0.0
+        },
+        "target_delay_minutes": 32.79999923706055
+      },
+      {
+        "features": {
+          "observed_speed": 46.099998474121094,
+          "expected_speed": 78.43380737304688,
+          "speed_ratio": 0.5883390307426453,
+          "baseline_duration_minutes": 21.279441833496094,
+          "rainfall_mm": 28.600000381469727,
+          "visibility_m": 6208.45458984375,
+          "wind_speed_kmh": 64.80000305175781,
+          "incident_count": 1.0,
+          "incident_severity": 0.8999999761581421,
+          "road_type_code": 0.0,
+          "hour_of_day": 9.0,
+          "day_of_week": 3.0
+        },
+        "target_delay_minutes": 24.299999237060547
+      },
+      {
+        "features": {
+          "observed_speed": 43.900001525878906,
+          "expected_speed": 53.21296310424805,
+          "speed_ratio": 0.8252738118171692,
+          "baseline_duration_minutes": 19.969470977783203,
+          "rainfall_mm": 0.0,
+          "visibility_m": 9802.517578125,
+          "wind_speed_kmh": 24.700000762939453,
+          "incident_count": 0.0,
+          "incident_severity": 0.0,
+          "road_type_code": 1.0,
+          "hour_of_day": 7.0,
+          "day_of_week": 2.0
+        },
+        "target_delay_minutes": 3.799999952316284
+      }
+    ]
+  }
+}
